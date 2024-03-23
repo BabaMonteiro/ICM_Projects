@@ -5,46 +5,59 @@ import 'package:quizzy/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
-  
+
   @override
-  State<Quiz> createState() {
-    return _QuizState();
-  }
+  State<Quiz> createState() => _QuizState();
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? activeScreen; 
-
-  @override
-  void initState() {
-    activeScreen = StartScreen(switchScreen);
-    super.initState();
-  }
+  bool isStartScreen = true; // Flag to track the active screen
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      isStartScreen = false; // Change flag when switching screens
     });
   }
-  
+
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 78, 13, 151),
-                  Color.fromARGB(255, 107, 15, 168),
+        appBar: isStartScreen
+            ? AppBar(
+                backgroundColor: Color.fromARGB(255, 78, 13, 151), // Transparent AppBar
+                elevation: 0, // No shadow
+                leading: IconButton(
+                  icon: Icon(Icons.star, color: Colors.white, size: 50), // Your star icon here
+                  onPressed: () {
+                    // Action for star icon
+                  },
+                ),
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.account_circle, color: Colors.white, size: 40), // Your account icon here
+                    onPressed: () {
+                      // Action for account icon
+                    },
+                  ),
                 ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              )
+            : null, // No AppBar for the QuestionsScreen
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 78, 13, 151),
+                Color.fromARGB(255, 107, 15, 168),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-            child: activeScreen,
+          ),
+          child: isStartScreen ? StartScreen(switchScreen) : const QuestionsScreen(),
         ),
       ),
     );
   }
 }
+
