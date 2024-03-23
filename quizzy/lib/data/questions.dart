@@ -9,8 +9,8 @@ String decodeHtmlEntities(String htmlString) {
   return document.body!.text;
 }
 
-Future<List<dynamic>> fetchTriviaQuestions() async {
-  final String apiUrl = "https://opentdb.com/api.php?amount=30&difficulty=easy&type=multiple";
+Future<List<dynamic>> fetchTriviaQuestions(String apiUrl) async {
+  //final  = "https://opentdb.com/api.php?amount=30&difficulty=easy&type=multiple";
   final response = await http.get(Uri.parse(apiUrl));
 
   if (response.statusCode == 200) {

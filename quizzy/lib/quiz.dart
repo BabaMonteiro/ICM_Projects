@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:quizzy/questions_screen.dart';
 import 'package:quizzy/start_screen.dart';
+
+// Define a function type that accepts a String parameter.
+typedef SwitchScreenCallback = void Function(String apiUrl);
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -11,11 +13,14 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  bool isStartScreen = true; // Flag to track the active screen
+  bool isStartScreen = true;
+  String apiUrl = ""; // Keep track of the selected API URL.
 
-  void switchScreen() {
+  // This method matches the SwitchScreenCallback typedef.
+  void switchScreen(String selectedApiUrl) {
     setState(() {
-      isStartScreen = false; // Change flag when switching screens
+      isStartScreen = false;
+      apiUrl = selectedApiUrl; // Set the API URL based on selection.
     });
   }
 
@@ -25,24 +30,20 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         appBar: isStartScreen
             ? AppBar(
-                backgroundColor: Color.fromARGB(255, 78, 13, 151), // Transparent AppBar
-                elevation: 0, // No shadow
+                backgroundColor: Color.fromARGB(255, 78, 13, 151),
+                elevation: 0,
                 leading: IconButton(
-                  icon: Icon(Icons.star, color: Colors.white, size: 50), // Your star icon here
-                  onPressed: () {
-                    // Action for star icon
-                  },
+                  icon: Icon(Icons.star, color: Colors.white, size: 50),
+                  onPressed: () {},
                 ),
                 actions: [
                   IconButton(
-                    icon: Icon(Icons.account_circle, color: Colors.white, size: 40), // Your account icon here
-                    onPressed: () {
-                      // Action for account icon
-                    },
+                    icon: Icon(Icons.account_circle, color: Colors.white, size: 40),
+                    onPressed: () {},
                   ),
                 ],
               )
-            : null, // No AppBar for the QuestionsScreen
+            : null, // No AppBar for the QuestionsScreen.
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -54,10 +55,9 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: isStartScreen ? StartScreen(switchScreen) : const QuestionsScreen(),
+          child: isStartScreen ? StartScreen(switchScreen) : QuestionsScreen(apiUrl: apiUrl), // Pass apiUrl to QuestionsScreen.
         ),
       ),
     );
   }
 }
-

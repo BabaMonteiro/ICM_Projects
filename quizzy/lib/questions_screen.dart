@@ -4,7 +4,9 @@ import 'package:quizzy/answer_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({Key? key}) : super(key: key);
+  final String apiUrl; // Add this line
+
+  const QuestionsScreen({Key? key, required this.apiUrl}) : super(key: key); // Modify this line
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -24,7 +26,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   void _loadQuestions() async {
     try {
       // fetch trivia questions from the API
-      final questions = await fetchTriviaQuestions();
+      final questions = await fetchTriviaQuestions(widget.apiUrl);
       setState(() {
         _questions = questions;
         _isLoading = false; 
