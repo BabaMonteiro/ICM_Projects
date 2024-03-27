@@ -6,6 +6,7 @@ import 'package:quizzy/start_screen.dart';
 typedef SwitchScreenCallback = void Function(String apiUrl);
 
 class Quiz extends StatefulWidget {
+  
   const Quiz({super.key});
 
   @override
@@ -28,36 +29,11 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: isStartScreen
-            ? AppBar(
-                backgroundColor: Color.fromARGB(255, 78, 13, 151),
-                elevation: 0,
-                leading: IconButton(
-                  icon: Icon(Icons.star, color: Colors.white, size: 50),
-                  onPressed: () {},
-                ),
-                actions: [
-                  IconButton(
-                    icon: Icon(Icons.account_circle, color: Colors.white, size: 40),
-                    onPressed: () {},
-                  ),
-                ],
-              )
-            : null, // No AppBar for the QuestionsScreen.
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 78, 13, 151),
-                Color.fromARGB(255, 107, 15, 168),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: isStartScreen ? StartScreen(switchScreen) : QuestionsScreen(apiUrl: apiUrl), // Pass apiUrl to QuestionsScreen.
+          body: isStartScreen
+              ? StartScreen(switchScreen)
+              : QuestionsScreen(
+                  apiUrl: apiUrl), // Pass apiUrl to QuestionsScreen.
         ),
-      ),
-    );
+      );
   }
 }
