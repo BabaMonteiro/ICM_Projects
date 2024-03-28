@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/profile.dart';
+import 'package:quizzy/challenge_mode.dart';
 
 
 class StartScreen extends StatelessWidget {
@@ -98,18 +99,26 @@ class StartScreen extends StatelessWidget {
                 GestureDetector(
                   child: const Text('Classic Game'),
                   onTap: () {
-                    Navigator.of(context).pop(); // Close the dialog
+                    Navigator.of(context).pop(); 
                     startQuiz(
-                        "https://opentdb.com/api.php?amount=30&difficulty=easy&type=multiple"); // Start the quiz for Classic Game
+                        "https://opentdb.com/api.php?amount=30&difficulty=easy&type=multiple"); 
                   },
                 ),
                 Padding(padding: EdgeInsets.all(8.0)),
                 GestureDetector(
                   child: Text('Categories'),
                   onTap: () {
-                    Navigator.of(context).pop(); // Close the first dialog
+                    Navigator.of(context).pop(); 
                     _showCategoriesDialog(
-                        context); // Call another method to show the categories dialog
+                        context);
+                  },
+                ),
+                GestureDetector(
+                  child: const Text('Challenge Mode'),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ChallengeMode(),
+                    ));
                   },
                 ),
               ],
