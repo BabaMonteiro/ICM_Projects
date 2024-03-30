@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
-
-// Import the necessary packages for location services and networking if needed.
+import 'package:quizzy/services/location.dart';
+import 'package:quizzy/data/city_questions.dart'; // Ensure this import is correct for fetching questions
 
 class ChallengeMode extends StatefulWidget {
   @override
@@ -9,39 +8,52 @@ class ChallengeMode extends StatefulWidget {
 }
 
 class _ChallengeModeState extends State<ChallengeMode> {
-  // Example question to display. In a real app, this could come from a server or local database.
-  String question = "Placeholder question";
+  String? adminArea;
+  List<Question>? questions; // Store questions for the current admin area
 
   @override
   void initState() {
     super.initState();
-    // Initialize location services and set up logic to determine the user's location.
-    // Based on the location, fetch and set the appropriate question.
+    getLocationAndQuestions();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Challenge Mode'),
+        title: const Text('Challenge Mode'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Your Challenge Question',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            SizedBox(height: 20),
-            Text(
-              question,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            // Add more UI elements as needed, e.g., answers, navigation buttons.
-          ],
-        ),
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: questions == null
+            ? CircularProgressIndicator() // Show loading indicator while questions are being fetched
+            : ListView.builder(
+                itemCount: questions!.length,
+                itemBuilder: (context, index) {
+                  final question = questions![index];
+                  return ListTile(
+                    title: Text(question.question),
+                    subtitle: Text('Options: ${question.options.join(', ')}'),
+                  );
+                },
+              ),
       ),
     );
+  }
+
+  TextStyle getStyle({double size = 20}) => TextStyle(fontSize: size, fontWeight: FontWeight.bold);
+
+  void getLocationAndQuestions() async {
+    final service = LocationService();
+    final locationData = await service.getLocation();
+
+    if (locationData != null) {
+      final placeMark = await service.getPlaceMark(locationData: locationData);
+
+      setState(() {
+        adminArea = placeMark?.administrativeArea ?? 'Could not get admin area';
+        questions = fetchQuestionsForCity(adminArea!); // Fetch questions for the admin area
+      });
+    }
   }
 }
