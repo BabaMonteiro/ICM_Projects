@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class Categories extends StatelessWidget {
-  const Categories({Key? key, required this.startQuiz}) : super(key: key);
+   const Categories({super.key, required this.startQuiz});
 
   final void Function() startQuiz;
 
