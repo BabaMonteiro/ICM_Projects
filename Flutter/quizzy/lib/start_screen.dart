@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/profile.dart';
+import 'package:quizzy/challenge_mode.dart';
 
 
 class StartScreen extends StatelessWidget {
@@ -134,6 +135,7 @@ void _showOptionsDialog(BuildContext context) {
                 backgroundColor: Colors.blueGrey, // Blue grey color
               ),
               SizedBox(height: 10),
+              // Add any additional options or logic here
             ],
           ),
         ),
@@ -141,6 +143,7 @@ void _showOptionsDialog(BuildContext context) {
     },
   );
 }
+
 
 Widget _buildOptionItem(
   BuildContext context,
