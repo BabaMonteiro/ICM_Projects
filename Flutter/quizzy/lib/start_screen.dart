@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/profile.dart';
-import 'package:quizzy/challenge_mode.dart';
+import 'package:quizzy/location_mode.dart';
+import 'package:quizzy/movement_mode.dart';
 
 class StartScreen extends StatelessWidget {
   final void Function(String apiUrl) startQuiz;
@@ -128,12 +129,9 @@ class StartScreen extends StatelessWidget {
                 'Challenge Mode',
                 null, // No URL needed for navigating to a widget
                 onTap: () {
-                  Navigator.of(context).pop(); // Close the dialog first
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChallengeMode()), // Navigate to ChallengeMode widget
-                  );
-                },
+                    Navigator.of(context).pop();
+                    _showChallengeDialog(context);
+                  },
                 backgroundColor: Colors.deepOrange, // Choose a color that fits your app theme
               ),
               SizedBox(height: 10),
@@ -255,6 +253,7 @@ class StartScreen extends StatelessWidget {
     );
   }
 
+
   Widget _buildCategoryItem(BuildContext context, String title, String url, IconData iconData, Color color) {
     return Material(
       color: Colors.transparent,
@@ -288,6 +287,71 @@ class StartScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+    void _showChallengeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 165, 131, 220),
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Select your Challenge Mode',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                _buildOptionItem(
+                context,
+                'Challenge Mode',
+                null, // No URL needed for navigating to a widget
+                onTap: () {
+                  Navigator.of(context).pop(); // Close the dialog first
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LocationMode()), // Navigate to ChallengeMode widget
+                  );
+                },
+                backgroundColor: Colors.deepOrange, // Choose a color that fits your app theme
+              ),SizedBox(height: 10),
+                _buildOptionItem(
+                context,
+                'Movement Mode',
+                null, // No URL needed for navigating to a widget
+                onTap: () {
+                  Navigator.of(context).pop(); // Close the dialog first
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MovementMode()), // Navigate to ChallengeMode widget
+                  );
+                },
+                backgroundColor: Colors.deepOrange, // Choose a color that fits your app theme
+              ),
+              SizedBox(height: 10),
+            ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
