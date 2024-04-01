@@ -1,0 +1,579 @@
+{
+    "Aveiro": [
+        {
+            "id": 1,
+            "question": "What is Aveiro commonly known for in Portugal?",
+            "answerIndex": 0,
+            "options": ["Canals and waterways", "Wine production", "Sardine fishing", "Roman architecture"]
+       },
+       {
+        "id": 2,
+        "question": "Which famous museum is located in Aveiro?",
+        "answerIndex": 2,
+        "options": ["National Museum", "Museum of Aveiro", "Maritime Museum", "Art Museum"]
+      },
+      {
+        "id": 3,
+        "question": "What is a traditional dish of Aveiro?",
+        "answerIndex": 1,
+        "options": ["Caldo Verde", "Ovos Moles", "Bacalhau à Brás", "Cozido à Portuguesa"]
+      },
+      {
+        "id": 4,
+        "question": "Aveiro is often referred to as the Venice of Portugal because of its:",
+        "answerIndex": 3,
+        "options": ["Historical buildings", "Music festivals", "Friendly people", "Network of canals"]
+      },
+      {
+        "id": 5,
+        "question": "Which body of water is Aveiro connected to?",
+        "answerIndex": 0,
+        "options": ["Ria de Aveiro", "Atlantic Ocean", "Tagus River", "Douro River"]
+      }
+    ],
+    "Beja": [
+        {
+          "id": 6,
+          "question": "What historical structure is Beja known for?",
+          "answerIndex": 1,
+          "options": ["Beja's Modern Art Museum", "Beja Castle", "The Roman Ruins", "Beja Cathedral"]
+        },
+        {
+          "id": 7,
+          "question": "Beja is in which Portuguese region?",
+          "answerIndex": 0,
+          "options": ["Alentejo", "Algarve", "Douro", "Minho"]
+        },
+        {
+          "id": 8,
+          "question": "What is Beja's primary agricultural export?",
+          "answerIndex": 2,
+          "options": ["Port wine", "Cherries", "Olive oil", "Seafood"]
+        },
+        {
+          "id": 9,
+          "question": "Which of these is a traditional dish from the Beja region?",
+          "answerIndex": 3,
+          "options": ["Francesinha", "Bacalhau", "Caldo Verde", "Migas Alentejanas"]
+        },
+        {
+          "id": 10,
+          "question": "Beja was once a significant outpost for which ancient civilization?",
+          "answerIndex": 1,
+          "options": ["Carthaginians", "Romans", "Greeks", "Phoenicians"]
+        }
+    ],
+    "Braga": [
+        {
+          "id": 11,
+          "question": "Braga is famous for which historical religious festival?",
+          "answerIndex": 0,
+          "options": ["Semana Santa", "Festa de São João", "Natal de Braga", "Festival de Fado"]
+        },
+        {
+          "id": 12,
+          "question": "Which notable sanctuary is located near Braga?",
+          "answerIndex": 2,
+          "options": ["Sanctuary of Christ the King", "Sanctuary of Fatima", "Bom Jesus do Monte", "Sanctuary of Our Lady of Remedies"]
+        },
+        {
+          "id": 13,
+          "question": "What is Braga known for architecturally?",
+          "answerIndex": 3,
+          "options": ["Modernist buildings", "Art Deco facades", "Gothic style", "Baroque churches"]
+        },
+        {
+          "id": 14,
+          "question": "Which Roman landmark is a point of interest in Braga?",
+          "answerIndex": 1,
+          "options": ["Roman bridge of Chaves", "Braga's Roman Baths", "Alcántara Bridge", "Conímbriga ruins"]
+        },
+        {
+          "id": 15,
+          "question": "Braga's football stadium, Estádio Municipal de Braga, is unique because it:",
+          "answerIndex": 1,
+          "options": ["Is floating on a river", "Is carved out of a quarry", "Has a retractable roof", "Is the oldest in Portugal"]
+        }
+    ],
+    "Bragança": [
+        {
+          "id": 61,
+          "question": "Bragança is well-known for which castle?",
+          "answerIndex": 0,
+          "options": ["Bragança Castle", "Penedono Castle", "Almourol Castle", "Belmonte Castle"]
+        },
+        {
+          "id": 62,
+          "question": "The Montesinho Natural Park, located near Bragança, is famous for its:",
+          "answerIndex": 1,
+          "options": ["Vineyards", "Diverse ecosystems", "Beaches", "Roman ruins"]
+        },
+        {
+          "id": 63,
+          "question": "What is a traditional dish from Bragança?",
+          "answerIndex": 2,
+          "options": ["Açorda", "Francesinha", "Posta Mirandesa", "Caldo Verde"]
+        },
+        {
+          "id": 64,
+          "question": "Bragança belongs to which historical Portuguese province?",
+          "answerIndex": 3,
+          "options": ["Alentejo", "Ribatejo", "Minho", "Trás-os-Montes"]
+        },
+        {
+          "id": 65,
+          "question": "Which river flows near Bragança?",
+          "answerIndex": 0,
+          "options": ["Sabor", "Douro", "Tua", "Côa"]
+        }
+      ],
+      "Castelo Branco": [
+        {
+          "id": 66,
+          "question": "Castelo Branco is famous for its:",
+          "answerIndex": 1,
+          "options": ["Beaches", "Embroidery", "Wine production", "Ski resorts"]
+        },
+        {
+          "id": 67,
+          "question": "The Jardim do Paço Episcopal in Castelo Branco is known for its:",
+          "answerIndex": 2,
+          "options": ["Modern art installations", "Historic fountains", "Baroque gardens", "Roman ruins"]
+        },
+        {
+          "id": 68,
+          "question": "Castelo Branco shares its border with which country?",
+          "answerIndex": 3,
+          "options": ["Spain", "France", "Italy", "Belgium"]
+        },
+        {
+          "id": 69,
+          "question": "The name Castelo Branco refers to a:",
+          "answerIndex": 0,
+          "options": ["White castle", "Large park", "River", "Mountain range"]
+        },
+        {
+          "id": 70,
+          "question": "Which product is a traditional craft of Castelo Branco?",
+          "answerIndex": 1,
+          "options": ["Wine", "Cheese", "Embroidery", "Olive oil"]
+        }
+      ],
+      "Coimbra": [
+        {
+          "id": 16,
+          "question": "What is Coimbra best known for?",
+          "answerIndex": 0,
+          "options": ["The University of Coimbra", "Its seaside resorts", "Port wine production", "Traditional Fado music"]
+        },
+        {
+          "id": 17,
+          "question": "Coimbra is home to one of the oldest universities in the world. In which year was it established?",
+          "answerIndex": 1,
+          "options": ["1537", "1290", "1415", "1554"]
+        },
+        {
+          "id": 18,
+          "question": "Which river runs through Coimbra?",
+          "answerIndex": 3,
+          "options": ["Tagus", "Douro", "Guadiana", "Mondego"]
+        },
+        {
+          "id": 19,
+          "question": "What architectural style is the University of Coimbra's Joanina Library?",
+          "answerIndex": 2,
+          "options": ["Manueline", "Renaissance", "Baroque", "Gothic"]
+        },
+        {
+          "id": 20,
+          "question": "The famous 'Sé Velha' is a landmark in Coimbra. What is it?",
+          "answerIndex": 0,
+          "options": ["Old Cathedral", "Historic Tower", "Ancient Castle", "Historical Archive"]
+        }
+      ],
+      "Évora": [
+        {
+          "id": 71,
+          "question": "Évora houses a famous Roman Temple dedicated to which deity?",
+          "answerIndex": 2,
+          "options": ["Jupiter", "Minerva", "Diana", "Venus"]
+        },
+        {
+          "id": 72,
+          "question": "The historic center of Évora was declared a World Heritage Site by UNESCO in:",
+          "answerIndex": 3,
+          "options": ["1978", "1982", "1986", "1988"]
+        },
+        {
+          "id": 73,
+          "question": "Évora is part of which Portuguese wine region?",
+          "answerIndex": 0,
+          "options": ["Alentejo", "Douro", "Dão", "Vinho Verde"]
+        },
+        {
+          "id": 74,
+          "question": "Which university in Évora is one of the oldest in Portugal, established in the 16th century?",
+          "answerIndex": 1,
+          "options": ["University of Porto", "University of Évora", "University of Coimbra", "University of Lisbon"]
+        },
+        {
+          "id": 75,
+          "question": "Évora is known for its well-preserved:",
+          "answerIndex": 2,
+          "options": ["Beaches", "Castles", "Old Town", "Modern architecture"]
+        }
+      ],
+      "Faro": [
+        {
+          "id": 46,
+          "question": "Faro is famous for being the gateway to which Portuguese region?",
+          "answerIndex": 0,
+          "options": ["Algarve", "Douro", "Alentejo", "Minho"]
+        },
+        {
+          "id": 47,
+          "question": "The Ria Formosa lagoon, located near Faro, is known for its:",
+          "answerIndex": 1,
+          "options": ["Wine production", "Unique bird species", "Historical castles", "Thermal baths"]
+        },
+        {
+          "id": 48,
+          "question": "Which of these is a popular beach near Faro?",
+          "answerIndex": 2,
+          "options": ["Praia da Luz", "Praia da Rocha", "Ilha de Faro", "Ilha de Tavira"]
+        },
+        {
+          "id": 49,
+          "question": "Faro's Old Town is enclosed by:",
+          "answerIndex": 3,
+          "options": ["Modern skyscrapers", "Natural cliffs", "A river", "Medieval walls"]
+        },
+        {
+          "id": 50,
+          "question": "What is Faro's annual event that celebrates biker culture known as?",
+          "answerIndex": 0,
+          "options": ["Faro Motorcycle Rally", "Faro Fest", "Algarve Bike Week", "Portugal Ride"]
+        }
+      ],
+      "Guarda": [
+        {
+          "id": 51,
+          "question": "Guarda is located near which mountain range?",
+          "answerIndex": 0,
+          "options": ["Serra da Estrela", "Serra do Gerês", "Serra de Sintra", "Serra de São Mamede"]
+        },
+        {
+          "id": 52,
+          "question": "Which architectural style is predominant in the Guarda Cathedral?",
+          "answerIndex": 1,
+          "options": ["Rococo", "Gothic", "Manueline", "Romanesque"]
+        },
+        {
+          "id": 53,
+          "question": "Guarda is known for its historical significance in:",
+          "answerIndex": 2,
+          "options": ["The Age of Discoveries", "The Roman Era", "The Reconquista", "The Napoleonic Wars"]
+        },
+        {
+          "id": 54,
+          "question": "What type of climate does Guarda have?",
+          "answerIndex": 3,
+          "options": ["Mediterranean", "Oceanic", "Subtropical", "Continental"]
+        },
+        {
+          "id": 55,
+          "question": "Guarda's museum, 'Museu da Guarda', is renowned for its collection of:",
+          "answerIndex": 0,
+          "options": ["Sacred art", "Modern art", "Archaeological finds", "Natural history"]
+        }
+      ],
+      "Leiria": [
+        {
+          "id": 56,
+          "question": "The Castle of Leiria overlooks the city from a:",
+          "answerIndex": 0,
+          "options": ["Hilltop", "Riverbank", "Cliff edge", "Valley"]
+        },
+        {
+          "id": 57,
+          "question": "Leiria is situated along which river?",
+          "answerIndex": 1,
+          "options": ["Douro", "Lis", "Tagus", "Mondego"]
+        },
+        {
+          "id": 58,
+          "question": "Which famous Portuguese poet associated with Leiria wrote 'The Lusiads'?",
+          "answerIndex": 2,
+          "options": ["Fernando Pessoa", "Sophia de Mello Breyner Andresen", "Luís de Camões", "António Gedeão"]
+        },
+        {
+          "id": 59,
+          "question": "Leiria is known for its historical production of:",
+          "answerIndex": 3,
+          "options": ["Wine", "Olive oil", "Cork", "Paper"]
+        },
+        {
+          "id": 60,
+          "question": "Praia da Vieira, a popular destination in Leiria district, is famous for its:",
+          "answerIndex": 1,
+          "options": ["Thermal springs", "Fishing traditions", "Vineyards", "Medieval festivals"]
+        }
+      ],
+      "Lisboa": [
+        {
+          "id": 31,
+          "question": "Which iconic tower is a UNESCO World Heritage Site in Lisboa?",
+          "answerIndex": 0,
+          "options": ["Torre de Belém", "Torre Vasco da Gama", "Torre do Tombo", "Torre de Cristo Rei"]
+        },
+        {
+          "id": 32,
+          "question": "Lisboa is famous for which type of music?",
+          "answerIndex": 1,
+          "options": ["Rock", "Fado", "Pop", "Jazz"]
+        },
+        {
+          "id": 33,
+          "question": "Which bridge in Lisboa is often compared to the Golden Gate Bridge?",
+          "answerIndex": 2,
+          "options": ["Ponte Vasco da Gama", "Ponte 25 de Abril", "Ponte de São João", "Ponte da Arrábida"]
+        },
+        {
+          "id": 34,
+          "question": "Lisboa's tram 28 takes you through historic neighborhoods, including:",
+          "answerIndex": 3,
+          "options": ["Belém", "Parque das Nações", "Chiado", "Alfama"]
+        },
+        {
+          "id": 35,
+          "question": "The Jerónimos Monastery is a masterpiece of which architectural style?",
+          "answerIndex": 0,
+          "options": ["Manueline", "Baroque", "Rococo", "Gothic"]
+        }
+      ],
+      "Portalegre": [
+        {
+          "id": 36,
+          "question": "Portalegre is located in which Portuguese region?",
+          "answerIndex": 0,
+          "options": ["Alentejo", "Algarve", "Douro", "Beira"]
+        },
+        {
+          "id": 37,
+          "question": "Which type of product is Portalegre particularly known for?",
+          "answerIndex": 1,
+          "options": ["Wine", "Tapestry", "Cheese", "Olive Oil"]
+        },
+        {
+          "id": 38,
+          "question": "The Castle of Portalegre overlooks the city. From which century does it date?",
+          "answerIndex": 2,
+          "options": ["12th Century", "13th Century", "14th Century", "15th Century"]
+        },
+        {
+          "id": 39,
+          "question": "Portalegre is near the border with which country?",
+          "answerIndex": 3,
+          "options": ["Spain", "France", "Italy", "Belgium"]
+        },
+        {
+          "id": 40,
+          "question": "The Museu da Tapeçaria de Portalegre showcases what kind of art?",
+          "answerIndex": 1,
+          "options": ["Paintings", "Tapestries", "Sculptures", "Ceramics"]
+        }
+      ],
+      "Porto": [
+        {
+          "id": 26,
+          "question": "Porto is famous for its production of what type of alcohol?",
+          "answerIndex": 0,
+          "options": ["Port wine", "Vinho Verde", "Madeira", "Moscatel"]
+        },
+        {
+          "id": 27,
+          "question": "Which river flows through Porto?",
+          "answerIndex": 1,
+          "options": ["Tagus", "Douro", "Mondego", "Minho"]
+        },
+        {
+          "id": 28,
+          "question": "Porto's historic center is a UNESCO World Heritage site. Which of these landmarks is a part of it?",
+          "answerIndex": 3,
+          "options": ["Torre de Belém", "Mosteiro dos Jerónimos", "Ponte 25 de Abril", "Ribeira District"]
+        },
+        {
+          "id": 29,
+          "question": "What is the traditional meat sandwich called that originated from Porto?",
+          "answerIndex": 1,
+          "options": ["Bifana", "Francesinha", "Alheira", "Prego"]
+        },
+        {
+          "id": 30,
+          "question": "One of Porto’s famous bookstores inspired the library in Harry Potter. Which one is it?",
+          "answerIndex": 2,
+          "options": ["Bertrand", "Livraria Lello", "Fnac", "Livraria Chardron"]
+        }
+      ],
+      "Setúbal": [
+        {
+          "id": 41,
+          "question": "What natural park is located near Setúbal?",
+          "answerIndex": 0,
+          "options": ["Arrábida Natural Park", "Sintra-Cascais Natural Park", "Peneda-Gerês National Park", "Serra da Estrela Natural Park"]
+        },
+        {
+          "id": 42,
+          "question": "Setúbal is known for being a port city along which body of water?",
+          "answerIndex": 1,
+          "options": ["Tagus River", "Sado River", "Douro River", "Atlantic Ocean"]
+        },
+        {
+          "id": 43,
+          "question": "Which famous Portuguese soccer player hails from Setúbal?",
+          "answerIndex": 2,
+          "options": ["Eusébio", "Luís Figo", "Cristiano Ronaldo", "José Mourinho"]
+        },
+        {
+          "id": 44,
+          "question": "The Livramento Market, known for its azulejos, sells primarily:",
+          "answerIndex": 3,
+          "options": ["Clothes", "Books", "Electronics", "Food"]
+        },
+        {
+          "id": 45,
+          "question": "Setúbal's primary industry historically revolves around:",
+          "answerIndex": 1,
+          "options": ["Tourism", "Fishing", "Wine-making", "Textiles"]
+        }
+      ],
+      "Santarém": [
+        {
+          "id": 76,
+          "question": "Santarém is often referred to as the:",
+          "answerIndex": 0,
+          "options": ["Capital of the Gothic in Portugal", "Venice of Portugal", "Capital of Roman Portugal", "Green Capital of Portugal"]
+        },
+        {
+          "id": 77,
+          "question": "Which river runs through Santarém?",
+          "answerIndex": 1,
+          "options": ["Douro", "Tejo (Tagus)", "Mondego", "Sado"]
+        },
+        {
+          "id": 78,
+          "question": "Santarém hosts the National Agriculture Fair, which is the largest of its kind in:",
+          "answerIndex": 2,
+          "options": ["The Algarve", "Lisbon Region", "Portugal", "The North of Portugal"]
+        },
+        {
+          "id": 79,
+          "question": "The Church of Santa Clara in Santarém is a prime example of:",
+          "answerIndex": 3,
+          "options": ["Baroque architecture", "Romanesque style", "Modernist influences", "Gothic architecture"]
+        },
+        {
+          "id": 80,
+          "question": "Santarém's culinary specialty is:",
+          "answerIndex": 0,
+          "options": ["Stone soup (Sopa da Pedra)", "Francesinha", "Pastéis de Nata", "Bacalhau à Brás"]
+        }
+      ],
+      "Viana do Castelo": [
+        {
+          "id": 81,
+          "question": "Viana do Castelo is renowned for its traditional:",
+          "answerIndex": 1,
+          "options": ["Wine", "Costumes and Goldsmithery", "Cheese", "Olive oil"]
+        },
+        {
+          "id": 82,
+          "question": "Which famous sanctuary, offering panoramic views, is located in Viana do Castelo?",
+          "answerIndex": 2,
+          "options": ["Sanctuary of Our Lady of Fátima", "Sanctuary of Bom Jesus do Monte", "Santa Luzia Sanctuary", "Sanctuary of Our Lady of Remedies"]
+        },
+        {
+          "id": 83,
+          "question": "Viana do Castelo sits along the coast of which ocean?",
+          "answerIndex": 3,
+          "options": ["Indian Ocean", "Arctic Ocean", "Pacific Ocean", "Atlantic Ocean"]
+        },
+        {
+          "id": 84,
+          "question": "The town is famous for the 'Festa de Nossa Senhora da Agonia', which is a:",
+          "answerIndex": 0,
+          "options": ["Religious festival", "Music festival", "Food festival", "Film festival"]
+        },
+        {
+          "id": 85,
+          "question": "Viana do Castelo's Gil Eannes ship is now a:",
+          "answerIndex": 1,
+          "options": ["Luxury yacht", "Museum ship", "Active fishing vessel", "Restaurant"]
+        }
+      ],
+      "Vila Real": [
+        {
+          "id": 86,
+          "question": "Vila Real is known for the 'Palácio de Mateus', which is featured on the labels of:",
+          "answerIndex": 2,
+          "options": ["Vinho Verde", "Port wine", "Mateus Rosé wine", "Douro wine"]
+        },
+        {
+          "id": 87,
+          "question": "The district is part of which major wine-producing region in Portugal?",
+          "answerIndex": 3,
+          "options": ["Alentejo", "Vinho Verde", "Lisboa", "Douro"]
+        },
+        {
+          "id": 88,
+          "question": "Vila Real's traditional meat pie is known as:",
+          "answerIndex": 0,
+          "options": ["Covilhã", "Maronesa", "Mirandesa", "Bôla de Carne"]
+        },
+        {
+          "id": 89,
+          "question": "Which natural park offers outdoor activities and stunning landscapes in Vila Real?",
+          "answerIndex": 1,
+          "options": ["Arrábida Natural Park", "Alvão Natural Park", "Peneda-Gerês National Park", "Serra da Estrela Natural Park"]
+        },
+        {
+          "id": 90,
+          "question": "Vila Real hosts a stage of the World Rally Championship, known as:",
+          "answerIndex": 2,
+          "options": ["Rally de Portugal", "Rally Vinho do Porto", "Rally de Vila Real", "Rally Algarve"]
+        }
+      ],
+      "Viseu": [
+        {
+          "id": 21,
+          "question": "Viseu is renowned for its production of what commodity?",
+          "answerIndex": 2,
+          "options": ["Olive oil", "Cork", "Wine", "Cheese"]
+        },
+        {
+          "id": 22,
+          "question": "Which famous painter, born in Viseu, is celebrated in the Grão Vasco National Museum?",
+          "answerIndex": 1,
+          "options": ["Malhoa", "Vasco Fernandes", "Nadir Afonso", "Amadeo de Souza-Cardoso"]
+        },
+        {
+          "id": 23,
+          "question": "What is the name of the mountain range that is a natural landmark near Viseu?",
+          "answerIndex": 3,
+          "options": ["Montesinho", "Gerês", "Estrela", "Caramulo"]
+        },
+        {
+          "id": 24,
+          "question": "The Viseu Cathedral is a prime example of which architectural style?",
+          "answerIndex": 0,
+          "options": ["Romanesque", "Modernist", "Manueline", "Rococo"]
+        },
+        {
+          "id": 25,
+          "question": "What is the historical center of Viseu commonly referred to as?",
+          "answerIndex": 1,
+          "options": ["Ribeira", "Rossio", "Alfama", "Chiado"]
+        }
+      ]
+  }
+  

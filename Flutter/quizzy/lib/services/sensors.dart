@@ -20,12 +20,9 @@ class SensorChallengeService {
   }
 
   void _onUserAccelerometerEvent(UserAccelerometerEvent event) {
-    // Shake detection logic remains unchanged
     if (event.x.abs() > 12 || event.y.abs() > 12 || event.z.abs() > 12) {
       shakeDetected();
     }
-
-    // Improved upside-down detection with a simple debounce mechanism
     if (event.z < -9.8 && !isUpsideDownDetected) {
       isUpsideDownDetected = true;
       upsideDown();
