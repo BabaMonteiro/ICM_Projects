@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/widgets/image_input.dart';
+import 'package:quizzy/app_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -8,16 +9,15 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 78, 13, 151),
-        elevation: 0,
-        leading: IconButton(
+      appBar: QuizzyAppBar(
+        height: AppBar().preferredSize.height,
+        leadingIcon: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        actions: [
+        actionIcons:[
           IconButton(
             icon: const Icon(Icons.edit, color: Colors.white, size: 30),
             onPressed: () {

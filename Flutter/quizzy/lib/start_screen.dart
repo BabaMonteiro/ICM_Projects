@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/profile.dart';
 import 'package:quizzy/location_mode.dart';
 import 'package:quizzy/movement_mode.dart';
+import 'package:quizzy/app_bar.dart';
 
 class StartScreen extends StatelessWidget {
   final void Function(String apiUrl) startQuiz;
@@ -12,36 +13,39 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 78, 13, 151),
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.star, color: Colors.white, size: 50),
+      appBar: QuizzyAppBar(
+        height: AppBar().preferredSize.height,
+        leadingIcon: IconButton(
+          icon: const Icon(Icons.star, color: Colors.white, size: 35),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            );
-          },
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+          );
+        },
         ),
-        actions: [
+        actionIcons: [
           IconButton(
-            icon: const Icon(Icons.account_circle, color: Colors.white, size: 50),
+            icon: const Icon(Icons.account_circle, color: Colors.white, size: 35),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-            },
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+          );
+        },
           ),
+          // Add more action icons if needed
         ],
       ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
+              Color(0xFF736CC6),
               Color.fromARGB(255, 78, 13, 151),
               Color.fromARGB(255, 107, 15, 168),
+              Color(0xFF736CC6),
+             // Color(0xFFFF8675)
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -57,7 +61,8 @@ class StartScreen extends StatelessWidget {
                 'Quiz until it\'s easy!',
                 style: GoogleFonts.lato(
                   color: const Color.fromARGB(255, 237, 223, 252),
-                  fontSize: 24,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 30),
@@ -65,9 +70,11 @@ class StartScreen extends StatelessWidget {
                 onPressed: () => _showOptionsDialog(context),
                 style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.white,
+                  side: const BorderSide(color: Colors.white, width: 3),
+                  backgroundColor: const Color(0xFFFF8675),
                 ),
                 icon: const Icon(Icons.arrow_right_alt),
-                label: const Text('Start Quiz'),
+                label: const Text('START QUIZ'),
               )
             ],
           ),
