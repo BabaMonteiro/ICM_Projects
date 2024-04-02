@@ -4,6 +4,7 @@ import 'package:quizzy/profile.dart';
 import 'package:quizzy/location_mode.dart';
 import 'package:quizzy/movement_mode.dart';
 import 'package:quizzy/app_bar.dart';
+import 'package:quizzy/qr_question.dart';
 
 class StartScreen extends StatelessWidget {
   final void Function(String apiUrl) startQuiz;
@@ -20,7 +21,7 @@ class StartScreen extends StatelessWidget {
           onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+            MaterialPageRoute(builder: (context) => const QrCodeQuestion()),
           );
         },
         ),

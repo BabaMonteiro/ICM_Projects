@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quizzy/services/location.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert'; 
 import 'package:quizzy/data/city_questions.dart'; // Ensure correct import for fetching questions
 
 class LocationMode extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'dart:convert'; 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class City {
@@ -39,7 +38,7 @@ class Question {
 
 Future<void> fetchQuestionsForCity(String city, Function(List<Question>) onQuestionsFetched) async {
   print('Fetching questions for city: $city');
-  var url = Uri.parse('http://192.168.1.204:8000/cities/all?city=${Uri.encodeComponent(city)}'); 
+  var url = Uri.parse('http://172.20.10.3:8000/cities/all?city=${Uri.encodeComponent(city)}'); 
   try {
     final response = await http.get(url);
     print('Response status: ${response.statusCode}');
@@ -47,7 +46,6 @@ Future<void> fetchQuestionsForCity(String city, Function(List<Question>) onQuest
     if (response.statusCode == 200) {
       final data = json.decode(response.body) as List;
       final List<City> cities = data.map((cityJson) => City.fromJson(cityJson)).toList();
-      // Assuming you're interested in the first city and its questions
       if (cities.isNotEmpty) {
       onQuestionsFetched(cities.first.questions);
     }
@@ -58,6 +56,5 @@ Future<void> fetchQuestionsForCity(String city, Function(List<Question>) onQuest
   } catch (e) {
     print('Error fetching questions: $e');
   }
-  // Catch block
 }
 

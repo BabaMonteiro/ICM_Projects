@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quizzy/profile.dart';
 
 class QuizzyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -16,9 +15,9 @@ class QuizzyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent, // Makes the AppBar's background transparent
-      elevation: 0, // Removes shadow from the AppBar
-      flexibleSpace: Container( // Use flexibleSpace to apply background gradient
+      backgroundColor: Colors.transparent, 
+      elevation: 0,
+      flexibleSpace: Container( 
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -26,13 +25,12 @@ class QuizzyAppBar extends StatelessWidget implements PreferredSizeWidget {
             colors: [
               Color(0xFF736CC6),
               Color(0xFF736CC6),
-              // Add more colors for the gradient here if needed
             ],
           ),
         ),
       ),
-      leading: leadingIcon, // Use the leadingIcon passed in
-      actions: actionIcons, // Use the actionIcons passed in
+      leading: leadingIcon, 
+      actions: actionIcons, 
     );
   }
 

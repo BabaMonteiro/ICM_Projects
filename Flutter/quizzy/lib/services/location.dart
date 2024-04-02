@@ -66,7 +66,7 @@ class LocationService {
     List<goa.Placemark> placemarks = await goa.placemarkFromCoordinates(locationData.latitude!, locationData.longitude!);
     //print("i get here 3");
     //print (placemarks);
-    if (placemarks != null && placemarks.isNotEmpty) {
+    if (placemarks.isNotEmpty) {
       //print("i get here 3");
       print("Geocoding success: Country - ${placemarks[0].country}, Admin Area - ${placemarks[0].administrativeArea}");
       return placemarks[0];

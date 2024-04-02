@@ -1,8 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:html/parser.dart' show parse;
-import 'package:html/dom.dart';
-
 
 String decodeHtmlEntities(String htmlString) {
   var document = parse(htmlString);
