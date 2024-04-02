@@ -316,7 +316,7 @@ class StartScreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
                     'Select your Challenge Mode',
@@ -331,28 +331,28 @@ class StartScreen extends StatelessWidget {
                 _buildOptionItem(
                 context,
                 'Challenge Mode',
-                null, // No URL needed for navigating to a widget
+                null, 
                 onTap: () {
-                  Navigator.of(context).pop(); // Close the dialog first
+                  Navigator.of(context).pop(); 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LocationMode()), // Navigate to ChallengeMode widget
+                    MaterialPageRoute(builder: (context) => LocationMode()),
                   );
                 },
-                backgroundColor: Colors.deepOrange, // Choose a color that fits your app theme
+                backgroundColor: Colors.deepOrange, 
               ),SizedBox(height: 10),
                 _buildOptionItem(
                 context,
                 'Movement Mode',
-                null, // No URL needed for navigating to a widget
+                null, 
                 onTap: () {
-                  Navigator.of(context).pop(); // Close the dialog first
+                  Navigator.of(context).pop(); 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MovementMode()), // Navigate to ChallengeMode widget
+                    MaterialPageRoute(builder: (context) => MovementMode()), 
                   );
                 },
-                backgroundColor: Colors.deepOrange, // Choose a color that fits your app theme
+                backgroundColor: Colors.deepOrange,
               ),
               SizedBox(height: 10),
             ],
