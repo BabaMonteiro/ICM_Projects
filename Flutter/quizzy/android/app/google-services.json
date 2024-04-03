@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "784219851741",
+    "project_id": "quizzy-login-app",
+    "storage_bucket": "quizzy-login-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784219851741:android:63f0e0cf643778827b8434",
+        "android_client_info": {
+          "package_name": "com.example.quizzy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMOCEDJeAnq4aadRmOg4mSB7_SX1a92nI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

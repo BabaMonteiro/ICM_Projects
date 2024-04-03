@@ -1,80 +1,72 @@
 import 'package:flutter/material.dart';
-import 'package:quizzy/data/questions.dart'; // Adjust this import based on your project structure
-import 'package:quizzy/answer_button.dart'; // Adjust this import based on your project structure
+import 'package:quizzy/data/questions.dart'; // Ensure this path matches where you placed fetchTriviaQuestions
+import 'package:quizzy/answer_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  final String apiUrl;
+  final String apiUrl; // Add this line
 
-  const QuestionsScreen({Key? key, required this.apiUrl}) : super(key: key);
+  const QuestionsScreen({Key? key, required this.apiUrl}) : super(key: key); // Modify this line
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  List<dynamic> _questions = [];
-  int _currentQuestionIndex = 0;
-  bool _isLoading = true;
-  String? _selectedAnswer;
-  bool _isAnswerCorrect = false;
+  List<dynamic> _questions = []; // lista das questões
+  int _currentQuestionIndex = 0; // index da questão atual
+  bool _isLoading = true; // loading while fetching
 
   @override
   void initState() {
     super.initState();
-    _loadQuestions();
+    _loadQuestions(); // carrega as questões (vai buscar ao ficheiro data/questions.dart)
   }
 
   void _loadQuestions() async {
     try {
+      // fetch trivia questions from the API
       final questions = await fetchTriviaQuestions(widget.apiUrl);
-      final processedQuestions = questions.map((question) {
-        final List<dynamic> allAnswers = List.from(question['incorrect_answers'])
-          ..add(question['correct_answer']);
-        allAnswers.shuffle(); // Shuffle once here
-        return {
-          ...question,
-          'shuffled_answers': allAnswers, // Store shuffled answers back in the question
-        };
-      }).toList();
-
       setState(() {
-        _questions = processedQuestions;
-        _isLoading = false;
+        _questions = questions;
+        _isLoading = false; 
       });
     } catch (e) {
       print("Failed to load questions: $e");
     }
   }
 
-  void _answerQuestion(String selectedAnswer) {
-    final correctAnswer = _questions[_currentQuestionIndex]['correct_answer'];
-    setState(() {
-      _selectedAnswer = selectedAnswer;
-      _isAnswerCorrect = selectedAnswer == correctAnswer;
-    });
-
-    // Add a delay before moving to the next question or resetting state for feedback
-    Future.delayed(Duration(seconds: 1), () {
-      if (_currentQuestionIndex < _questions.length - 1) {
-        setState(() {
-          _currentQuestionIndex++;
-          _selectedAnswer = null; // Reset for the next question
-        });
-      } else {
-        // TODO: Handle quiz completion here
-      }
-    });
+  void _answerQuestion(bool option) {
+    // handle right or wrong answer
+    if (option){
+      print('Correct!');
+      
+    } else {
+      print('Wrong!');
+    }
+    if (_currentQuestionIndex < _questions.length - 1) {
+      setState(() {
+        _currentQuestionIndex++;
+      });
+    } else {
+    //TODO
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return Scaffold(body: Center(child: CircularProgressIndicator()));
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
     }
 
     final currentQuestion = _questions[_currentQuestionIndex];
-    final List<dynamic> answers = currentQuestion['shuffled_answers'];
+    final List<dynamic> answers = List.from(currentQuestion['incorrect_answers'])
+      ..add(currentQuestion['correct_answer'])
+      ..shuffle();
 
     return Scaffold(
       body: SizedBox(
@@ -96,17 +88,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               ),
               const SizedBox(height: 30),
               ...answers.map((answer) {
-                bool isSelected = answer == _selectedAnswer;
-                Color color = Colors.blue; // Default color
-                if (isSelected) {
-                  color = _isAnswerCorrect ? Colors.green : Colors.red;
-                }
-                return AnswerButton(
-                  answerText: answer,
-                  onTap: () => _answerQuestion(answer),
-                  color: color,
-                );
-              }).toList(),
+                return AnswerButton(answerText: answer, onTap: () => _answerQuestion(answer == currentQuestion['correct_answer']),);
+              }),
             ],
           ),
         ),

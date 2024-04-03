@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class Categories extends StatelessWidget {
+  const Categories({super.key, required this.startQuiz});
 
-   const Categories({super.key, required this.startQuiz});
   final void Function() startQuiz;
 
   @override
