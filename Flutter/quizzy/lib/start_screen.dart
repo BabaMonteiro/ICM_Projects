@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizzy/account_screen.dart';
 import 'package:quizzy/auth.dart';
 import 'package:quizzy/profile.dart';
 
@@ -34,7 +35,7 @@ class StartScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AuthScreen(),
+                  builder: (context) => const Account(),
                 ),
               );
             },
