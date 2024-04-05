@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:quizzy/data/questions.dart'; // Adjust this import based on your project structure
-import 'package:quizzy/answer_button.dart'; // Adjust this import based on your project structure
+import 'package:quizzy/widgets/app_bar.dart';
+import 'package:quizzy/data/questions.dart';
+import 'package:quizzy/widgets/answer_button.dart'; 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizzy/widgets/exit_dialog.dart';
+import 'package:quizzy/widgets/endQuiz_dialog.dart';
 
 class QuestionsScreen extends StatefulWidget {
   final String apiUrl;
+  final VoidCallback onExit;
+  final String? qrScannedData; 
 
-  const QuestionsScreen({Key? key, required this.apiUrl}) : super(key: key);
+  const QuestionsScreen({Key? key, required this.apiUrl, required this.onExit, this.qrScannedData}) : super(key: key);
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -21,9 +26,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   @override
   void initState() {
-    super.initState();
-    _loadQuestions();
-  }
+   super.initState();
+  _loadQuestions();
+}
 
   void _loadQuestions() async {
     try {
@@ -31,41 +36,47 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       final processedQuestions = questions.map((question) {
         final List<dynamic> allAnswers = List.from(question['incorrect_answers'])
           ..add(question['correct_answer']);
-        allAnswers.shuffle(); // Shuffle once here
+        allAnswers.shuffle(); 
         return {
           ...question,
           'shuffled_answers': allAnswers, // Store shuffled answers back in the question
         };
       }).toList();
 
-      setState(() {
-        _questions = processedQuestions;
-        _isLoading = false;
-      });
+        setState(() {
+          _questions = processedQuestions;
+          _isLoading = false;
+        });
     } catch (e) {
       print("Failed to load questions: $e");
+      
     }
   }
 
   void _answerQuestion(String selectedAnswer) {
-    final correctAnswer = _questions[_currentQuestionIndex]['correct_answer'];
-    setState(() {
-      _selectedAnswer = selectedAnswer;
-      _isAnswerCorrect = selectedAnswer == correctAnswer;
-    });
+  final correctAnswer = _questions[_currentQuestionIndex]['correct_answer'];
+  bool isAnswerCorrect = selectedAnswer == correctAnswer;
 
-    // Add a delay before moving to the next question or resetting state for feedback
-    Future.delayed(Duration(seconds: 1), () {
-      if (_currentQuestionIndex < _questions.length - 1) {
-        setState(() {
-          _currentQuestionIndex++;
-          _selectedAnswer = null; // Reset for the next question
-        });
-      } else {
-        // TODO: Handle quiz completion here
-      }
+  setState(() {
+    _selectedAnswer = selectedAnswer;
+    _isAnswerCorrect = isAnswerCorrect;
+  });
+
+  Future.delayed(Duration(seconds: 1), () {
+  if (_currentQuestionIndex < _questions.length - 1) {
+    setState(() {
+      _currentQuestionIndex++;
+      _selectedAnswer = null; // Reset for the next question
     });
+  } else {
+    EndQuizDialog.show(context, widget.onExit);
   }
+});
+}
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +88,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final List<dynamic> answers = currentQuestion['shuffled_answers'];
 
     return Scaffold(
+      appBar: QuizzyAppBar  (height: AppBar().preferredSize.height,
+      leadingIcon: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30),
+          onPressed: () {
+             ExitDialog.show(context, widget.onExit);
+          },
+        ),
+      ),
       body: SizedBox(
         width: double.infinity,
         child: Container(
@@ -112,5 +131,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         ),
       ),
     );
+
+    
   }
+
+
 }

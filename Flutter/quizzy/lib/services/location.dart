@@ -60,7 +60,6 @@ class LocationService {
   Future<goa.Placemark?> getPlaceMark({required LocationData locationData}) async {
     //print("i get here");
     try {
-    
     //print("i get here 2");
     
     List<goa.Placemark> placemarks = await goa.placemarkFromCoordinates(locationData.latitude!, locationData.longitude!);

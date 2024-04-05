@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quizzy/profile.dart';
-import 'package:quizzy/location_mode.dart';
-import 'package:quizzy/movement_mode.dart';
-import 'package:quizzy/app_bar.dart';
-import 'package:quizzy/qr_question.dart';
+import 'package:quizzy/pages/profile.dart';
+import 'package:quizzy/pages/location_mode.dart';
+import 'package:quizzy/pages/movement_mode.dart';
+import 'package:quizzy/widgets/app_bar.dart';
+import 'package:quizzy/pages/qr_question.dart';
 
 class StartScreen extends StatelessWidget {
   final void Function(String apiUrl) startQuiz;
@@ -96,14 +96,14 @@ class StartScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           child: Container(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 165, 131, 220),
+              color: const Color.fromARGB(255, 165, 131, 220),
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Text(
                     'Choose an Option',
                     style: TextStyle(
@@ -117,8 +117,8 @@ class StartScreen extends StatelessWidget {
                 _buildOptionItem(
                   context,
                   'Classic Game',
-                  "https://opentdb.com/api.php?amount=30&difficulty=easy&type=multiple",
-                  backgroundColor: Color.fromARGB(255, 78, 13, 151),
+                  "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple",
+                  backgroundColor: const Color.fromARGB(255, 78, 13, 151),
                 ),
                 SizedBox(height: 10),
                 _buildOptionItem(
@@ -209,7 +209,7 @@ class StartScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Text(
                     'Select a Category',
                     style: TextStyle(
@@ -223,7 +223,7 @@ class StartScreen extends StatelessWidget {
                 _buildCategoryItem(
                   context,
                   'Geography',
-                  "https://opentdb.com/api.php?amount=30&category=22&difficulty=easy&type=multiple",
+                  "https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple",
                   Icons.location_on, // Geography icon
                   Color.fromARGB(255, 42, 26, 121), // Blue color for Geography
                 ),
@@ -231,7 +231,7 @@ class StartScreen extends StatelessWidget {
                 _buildCategoryItem(
                   context,
                   'History',
-                  "https://opentdb.com/api.php?amount=30&category=23&difficulty=easy&type=multiple",
+                  "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple",
                   Icons.history, // History icon
                   Color.fromARGB(255, 210, 126, 0), // Orange color for History
                 ),
@@ -239,7 +239,7 @@ class StartScreen extends StatelessWidget {
                 _buildCategoryItem(
                   context,
                   'Art',
-                  "https://opentdb.com/api.php?amount=30&category=25&difficulty=easy&type=multiple",
+                  "https://opentdb.com/api.php?amount=10&category=25&difficulty=easy&type=multiple",
                   Icons.palette, // Art icon
                   const Color.fromARGB(255, 5, 134, 9), // Green color for Art
                 ),
@@ -247,9 +247,9 @@ class StartScreen extends StatelessWidget {
                 _buildCategoryItem(
                   context,
                   'Sports',
-                  "https://opentdb.com/api.php?amount=30&category=21&difficulty=easy&type=multiple",
+                  "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple",
                   Icons.sports_soccer, // Sports icon
-                  Color.fromARGB(255, 187, 18, 6), // Red color for Sports
+                  const Color.fromARGB(255, 187, 18, 6), // Red color for Sports
                 ),
                 // Add more categories as needed
                 SizedBox(height: 10),
@@ -330,7 +330,7 @@ class StartScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 _buildOptionItem(
                 context,
-                'Challenge Mode',
+                'Location Mode',
                 null, 
                 onTap: () {
                   Navigator.of(context).pop(); 
@@ -339,7 +339,7 @@ class StartScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LocationMode()),
                   );
                 },
-                backgroundColor: Colors.deepOrange, 
+                backgroundColor: Color.fromARGB(255, 109, 109, 109), 
               ),SizedBox(height: 10),
                 _buildOptionItem(
                 context,
@@ -352,7 +352,7 @@ class StartScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => MovementMode()), 
                   );
                 },
-                backgroundColor: Colors.deepOrange,
+                backgroundColor: Color.fromARGB(255, 151, 65, 133),
               ),
               SizedBox(height: 10),
             ],

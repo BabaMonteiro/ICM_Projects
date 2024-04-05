@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quizzy/questions_screen.dart';
-import 'package:quizzy/start_screen.dart';
+import 'package:quizzy/pages/questions_screen.dart';
+import 'package:quizzy/pages/start_screen.dart';
 
 // Define a function type that accepts a String parameter.
 typedef SwitchScreenCallback = void Function(String apiUrl);
@@ -25,6 +25,13 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void resetToStartScreen() {
+  setState(() {
+    isStartScreen = true;
+    apiUrl = ""; // Reset the apiUrl or adjust as necessary
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +39,8 @@ class _QuizState extends State<Quiz> {
           body: isStartScreen
               ? StartScreen(switchScreen)
               : QuestionsScreen(
-                  apiUrl: apiUrl), // Pass apiUrl to QuestionsScreen.
+                  apiUrl: apiUrl,
+  onExit: resetToStartScreen,), // Pass apiUrl to QuestionsScreen.
         ),
       );
   }

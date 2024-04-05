@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzy/widgets/image_input.dart';
-import 'package:quizzy/app_bar.dart';
+import 'package:quizzy/widgets/app_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
