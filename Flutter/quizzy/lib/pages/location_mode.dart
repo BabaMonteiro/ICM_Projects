@@ -7,6 +7,7 @@ import 'package:quizzy/widgets/endQuiz_dialog.dart';
 import 'package:quizzy/data/local/db.dart';
 import 'package:quizzy/data/local/db_manager.dart';
 
+
 class LocationMode extends StatefulWidget {
   @override
   _LocationModeState createState() => _LocationModeState();
@@ -29,9 +30,9 @@ class _LocationModeState extends State<LocationMode> {
 }
 
 void prepareData() async {
-  await _manager.deleteQuestionsByIds([8]);
+  //await _manager.deleteQuestionsByIds([8]);
   print("i get here1!");
-  //await _manager.insertSampleData(); // Ensure sample data is inserted
+  await _manager.insertSampleData(); // Ensure sample data is inserted
   print("i get here2!");
   getLocationAndQuestions(); // Proceed to get location and questions
   print("i get here3!");
@@ -144,10 +145,10 @@ void prepareData() async {
         _manager.printAllCities();
         _manager.printAllQuestions();
         if (placeMark != null && placeMark.administrativeArea != null) {
-          //final adminArea = placeMark.administrativeArea!;
-          //print('Admin Area: $adminArea');
+          final adminArea = placeMark.administrativeArea!;
+          print('Admin Area: $adminArea');
         
-          final String adminArea = 'Aveiro'; // Hardcoded for testing
+          //inal String adminArea = 'Aveiro'; // Hardcoded for testing
           final questions = await DatabaseHelper.instance.fetchQuestionsForCity(adminArea);
           print('Fetched ${questions.length} questions for the city $adminArea.');
 

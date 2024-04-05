@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({super.key});
+  const ImageInput({
+    super.key,
+    required this.onPickImage,
+  });
+
+  final void Function(File pickedImage) onPickImage;
 
   @override
   State<ImageInput> createState() {
@@ -17,8 +22,11 @@ class _ImageInputState extends State<ImageInput> {
 
   void _takePicture() async {
     final imagePicker = ImagePicker();
-    final pickedImage =
-        await imagePicker.pickImage(source: ImageSource.camera, maxWidth: 600);
+    final pickedImage = await imagePicker.pickImage(
+      source: ImageSource.camera,
+      imageQuality: 50,
+      maxWidth: 150,
+    );
 
     if (pickedImage == null) {
       return;
@@ -27,39 +35,52 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _selectedImage = File(pickedImage.path);
     });
+
+    widget.onPickImage(_selectedImage!);
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget content = TextButton.icon(
-      icon: const Icon(Icons.camera),
-      label: const Text('Take Picture'),
-      onPressed: _takePicture,
-    );
+    // Widget content = TextButton.icon(
+    //   icon: const Icon(Icons.image),
+    //   label:  Text('Add Image', style: TextStyle(
+    //     color: Theme.of(context).primaryColor,
+    //   ),),
+    //   onPressed: _takePicture,
+    // );
 
-    if (_selectedImage != null) {
-      content = GestureDetector(
-        onTap: _takePicture,
-        child: Image.file(
-          _selectedImage!,
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
+    // if (_selectedImage != null) {
+    //   content = GestureDetector(
+    //     onTap: _takePicture,
+    //     child: Image.file(
+    //       _selectedImage!,
+    //       fit: BoxFit.cover,
+    //       width: double.infinity,
+    //       height: double.infinity,
+    //     ),
+    //   );
+    // }
+
+    return Column(children: [
+      CircleAvatar(
+        radius: 60,
+        child: CircleAvatar(
+          radius: 55,
+          backgroundColor: Colors.grey,
+          foregroundImage:
+              _selectedImage != null ? FileImage(_selectedImage!) : null,
         ),
-      );
-    }
-
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-        width: 1,
-        color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
       ),
-    ),
-      height: 250,
-      width: double.infinity,
-      alignment: Alignment.center,
-      child: content,
-    );
+      TextButton.icon(
+        icon: const Icon(Icons.image),
+        label: Text(
+          'Add Image',
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
+        onPressed: _takePicture,
+      )
+    ]);
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quizzy/pages/profile.dart';
 import 'package:quizzy/pages/location_mode.dart';
 import 'package:quizzy/pages/movement_mode.dart';
+import 'package:quizzy/pages/auth.dart';
 import 'package:quizzy/widgets/app_bar.dart';
 import 'package:quizzy/pages/qr_question.dart';
 
@@ -31,7 +31,7 @@ class StartScreen extends StatelessWidget {
             onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+            MaterialPageRoute(builder: (context) => const AuthScreen()),
           );
         },
           ),

@@ -9,11 +9,11 @@ class Manager {
     Database db = await DatabaseHelper.instance.database;
     await db.transaction((txn) async {
       // Check if the city exists and get its ID
-      var existingCities = await txn.query(DatabaseHelper.tableCities, where: 'name = ?', whereArgs: ['Aveiro']);
+      var existingCities = await txn.query(DatabaseHelper.tableCities, where: 'name = ?', whereArgs: ['Porto']);
       int cityId;
       
       if (existingCities.isEmpty) {
-        Map<String, dynamic> city = {'name': 'Aveiro'};
+        Map<String, dynamic> city = {'name': 'Porto'};
         cityId = await txn.insert(DatabaseHelper.tableCities, city);
         print("Inserted city with ID: $cityId");
       } else {
@@ -21,9 +21,9 @@ class Manager {
       }
 
       Map<String, dynamic> question = {
-        'question': 'Porto is famous for its production of what type of alcohol?',
-        'options': jsonEncode(['Port wine', 'Vinho Verde', 'Madeira', 'Moscatel', 'Douro River']),
-        'answerIndex': 0,
+        'question': 'What is the traditional meat sandwich called that originated from Porto?',
+        'options': jsonEncode(['Bifana', 'Francesinha', 'Alheira', 'Prego']),
+        'answerIndex': 1,
         'cityId': cityId,
       };
 
